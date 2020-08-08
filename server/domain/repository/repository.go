@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"context"
 	"errors"
 	"server/domain/model"
 )
@@ -13,8 +14,8 @@ type QueryError struct {
 var ErrNotFound = errors.New("Meeting not found")
 
 type MeetingsRepository interface {
-	FindById(id string) (*model.Meeting, error)
-	FindByIds(ids []string) ([]*model.Meeting, error)
-	Create(states []*model.Meeting) error
-	Count() (int64, error)
+	FindById(id string, ctx context.Context) (*model.Meeting, error)
+	FindByIds(ids []string, ctx context.Context) ([]*model.Meeting, error)
+	Create(states []*model.Meeting, ctx context.Context) error
+	Count(ctx context.Context) (int64, error)
 }
