@@ -30,12 +30,5 @@ func (r *mongoMeetingRepository) FindById(id string, ctx context.Context) (*mode
 	return &model.Meeting{MeetingId: "dsdsaasd"}, nil
 }
 
-func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
-	filter := bson.M{"_id": id}
-	var mongoModel inframodel.MongoMeeting
-	err := r.db.Collection(MeetingCollectionName).FindOne(ctx, filter).Decode(&mongoModel)
-	if err != nil {
-		return nil, err
-	}
-	return &model.Meeting{MeetingId: "dsdsaasd"}, nil
-}
+// func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
+// }
