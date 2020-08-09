@@ -21,7 +21,7 @@ type meetingsUseCase struct {
 }
 
 func (u *meetingsUseCase) GetMeeting(id string, c *gin.Context) (*dto.MeetingDto, error) {
-	result, err := u.service.GetById(id, c)
+	result, err := u.service.GetMeeting(id, c)
 	if err != nil {
 		return nil, err
 	}
