@@ -11,12 +11,16 @@ import (
 )
 
 type MeetingsUseCase interface {
-	StartNew() (*dto.StartedMeetingDto, error)
+	StartNew(leader string) (*dto.StartedMeetingDto, error)
 }
 
 type meetingsUseCase struct {
 	repo    repository.MeetingsRepository
 	service service.MeetingsService
+}
+
+func NewMeetingsUseCase(repo repository.MeetingsRepository, service service.MeetingsService) *meetingsUseCase {
+	return &meetingsUseCase{repo: repo, service: service}
 }
 
 func (u *meetingsUseCase) StartNew(leader string) (*dto.StartedMeetingDto, error) {

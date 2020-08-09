@@ -10,12 +10,21 @@ type MeetingRouter struct {
 	meetingUseCase usecase.MeetingsUseCase
 }
 
-func (r *MeetingRouter) CreateNewMeeting(c *gin.Context) {
-	dto, err := r.meetingUseCase.StartNew()
+func NewMeetingRouter(meetingUseCase usecase.MeetingsUseCase) *MeetingRouter {
+	return &MeetingRouter{meetingUseCase: meetingUseCase}
+}
+
+func (router *MeetingRouter) createNewMeeting(c *gin.Context) {
+	leader := c.Param("leader")
+	dto, err := router.meetingUseCase.StartNew(leader)
 	if err != nil {
 		c.Status(500)
-		c.Error(err)
+		_ = c.Error(err)
 	} else {
 		c.JSON(201, dto)
 	}
+}
+
+func (router *MeetingRouter) SetUpRoutes(r *gin.Engine) {
+	r.POST("/meetings/:leader", router.createNewMeeting)
 }
