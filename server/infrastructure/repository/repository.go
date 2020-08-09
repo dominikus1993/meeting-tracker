@@ -27,7 +27,7 @@ func (r *mongoMeetingRepository) FindById(id string, ctx context.Context) (*mode
 	if err != nil {
 		return nil, err
 	}
-	return &model.Meeting{MeetingId: "dsdsaasd"}, nil
+	return &model.Meeting{MeetingID: "dsdsaasd"}, nil
 }
 
 // func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
