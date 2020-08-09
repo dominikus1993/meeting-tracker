@@ -10,7 +10,7 @@ type MeetingsService interface {
 	Start(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error)
 	GetAll(ctx context.Context) ([]*model.Meeting, error)
 	GetById(id string, ctx context.Context) (*model.Meeting, error)
-	Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error)
+	Finish(id string, ctx context.Context) (*model.Meeting, error)
 }
 
 type myMeetingService struct {
@@ -29,7 +29,7 @@ func (m myMeetingService) GetById(id string, ctx context.Context) (*model.Meetin
 	panic("implement me")
 }
 
-func (m myMeetingService) Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error) {
+func (m myMeetingService) Finish(id string, ctx context.Context) (*model.Meeting, error) {
 	panic("implement me")
 }
 

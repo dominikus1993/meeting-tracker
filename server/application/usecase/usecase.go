@@ -29,11 +29,7 @@ func (u *meetingsUseCase) GetMeeting(id string, c *gin.Context) (*dto.MeetingDto
 }
 
 func (u *meetingsUseCase) Finish(id string, c context.Context) (*dto.FinishedMeetingDto, error) {
-	meeting, err := u.service.GetById(id, c)
-	if err != nil {
-		return nil, err
-	}
-	result, err := u.service.Finish(meeting, c)
+	result, err := u.service.Finish(id, c)
 	if err != nil {
 		return nil, err
 	}
