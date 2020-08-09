@@ -25,6 +25,28 @@ func (router *MeetingRouter) createNewMeeting(c *gin.Context) {
 	}
 }
 
+func (router *MeetingRouter) finishMeeting(c *gin.Context) {
+	id := c.Param("id")
+	dto, err := router.meetingUseCase.Finish(id, c)
+	if err != nil {
+		c.Status(500)
+		_ = c.Error(err)
+	} else {
+		c.JSON(201, dto)
+	}
+}
+
+func (router *MeetingRouter) getById(c *gin.Context) {
+	id := c.Param("id")
+	dto, err := router.meetingUseCase.GetMeeting(id, c)
+	if err != nil {
+		c.Status(500)
+		_ = c.Error(err)
+	} else {
+		c.JSON(201, dto)
+	}
+}
+
 func (router *MeetingRouter) getAllMeetings(c *gin.Context) {
 	dtos, err := router.meetingUseCase.GetAll(c)
 	if err != nil {
@@ -36,6 +58,8 @@ func (router *MeetingRouter) getAllMeetings(c *gin.Context) {
 }
 
 func (router *MeetingRouter) SetUpRoutes(r *gin.Engine) {
+	r.GET("/meetings/:id", router.getById)
 	r.GET("/meetings", router.getAllMeetings)
 	r.POST("/meetings/:leader", router.createNewMeeting)
+	r.PUT("/meetings/:id", router.finishMeeting)
 }

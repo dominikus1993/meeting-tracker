@@ -3,13 +3,15 @@ package main
 import (
 	"log"
 	"server/api/routes"
+	"server/application/service"
 	"server/application/usecase"
 
 	"github.com/gin-gonic/gin"
 )
 
 func setUpRouter() *routes.MeetingRouter {
-	useCase := usecase.NewMeetingsUseCase(nil, nil)
+	s := service.NewMyMeetingService(nil)
+	useCase := usecase.NewMeetingsUseCase(s)
 	return routes.NewMeetingRouter(useCase)
 }
 
