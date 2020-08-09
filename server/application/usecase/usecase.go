@@ -11,7 +11,8 @@ import (
 )
 
 type MeetingsUseCase interface {
-	StartNew(leader string) (*dto.StartedMeetingDto, error)
+	StartNew(leader string, context context.Context) (*dto.StartedMeetingDto, error)
+	GetAll(context context.Context) ([]dto.StartedMeetingDto, error)
 }
 
 type meetingsUseCase struct {
@@ -19,14 +20,29 @@ type meetingsUseCase struct {
 	service service.MeetingsService
 }
 
+func (u *meetingsUseCase) GetAll(context context.Context) ([]*dto.StartedMeetingDto, error) {
+	result, err := u.service.GetAll(context)
+	if err != nil {
+		return nil, err
+	}
+	resultCount := len(result)
+	res := make([]*dto.StartedMeetingDto, resultCount)
+
+	for i := 0; i < resultCount; i++ {
+		el := result[i]
+		res[i] = &dto.StartedMeetingDto{MeetingID: el.MeetingID, Leader: el.Leader, Start: el.Start, Finished: el.Finished}
+	}
+
+	return res, nil
+}
+
 func NewMeetingsUseCase(repo repository.MeetingsRepository, service service.MeetingsService) *meetingsUseCase {
 	return &meetingsUseCase{repo: repo, service: service}
 }
 
-func (u *meetingsUseCase) StartNew(leader string) (*dto.StartedMeetingDto, error) {
+func (u *meetingsUseCase) StartNew(leader string, context context.Context) (*dto.StartedMeetingDto, error) {
 	id := uuid.New()
-	ctx := context.Background()
-	result, err := u.service.Start(model.NewMeeting(id.String(), leader), ctx)
+	result, err := u.service.Start(model.NewMeeting(id.String(), leader), context)
 	if err != nil {
 		return nil, err
 	}
