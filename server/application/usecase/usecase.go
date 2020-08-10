@@ -12,7 +12,7 @@ import (
 
 type MeetingsUseCase interface {
 	StartNew(leaders []string, context context.Context) (*dto.StartedMeetingDto, error)
-	GetAll(context context.Context) ([]*dto.StartedMeetingDto, error)
+	GetAll(context context.Context) ([]*dto.MeetingDto, error)
 	Finish(id string, c context.Context) (*dto.FinishedMeetingDto, error)
 	GetMeeting(id string, c *gin.Context) (*dto.MeetingDto, error)
 }
@@ -46,17 +46,21 @@ func (u *meetingsUseCase) Finish(id string, c context.Context) (*dto.FinishedMee
 	return &dto.FinishedMeetingDto{MeetingID: result.MeetingID, Leaders: result.Leaders, Start: result.Start, End: result.Finish, Finished: true}, nil
 }
 
-func (u *meetingsUseCase) GetAll(context context.Context) ([]*dto.StartedMeetingDto, error) {
+func (u *meetingsUseCase) GetAll(context context.Context) ([]*dto.MeetingDto, error) {
 	result, err := u.service.GetAll(context)
 	if err != nil {
 		return nil, err
 	}
 	resultCount := len(result)
-	res := make([]*dto.StartedMeetingDto, resultCount)
+	res := make([]*dto.MeetingDto, resultCount)
 
 	for i := 0; i < resultCount; i++ {
 		el := result[i]
-		res[i] = &dto.StartedMeetingDto{MeetingID: el.MeetingID, Leaders: el.Leaders, Start: el.Start, Finished: el.Finished}
+		var finish *time.Time
+		if !el.Finish.IsZero() {
+			finish = &el.Finish
+		}
+		res[i] = &dto.MeetingDto{MeetingID: el.MeetingID, Leaders: el.Leaders, Start: el.Start, End: finish, Finished: el.Finished}
 	}
 
 	return res, nil

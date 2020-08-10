@@ -35,8 +35,7 @@ func (router *MeetingRouter) finishMeeting(c *gin.Context) {
 	id := c.Param("id")
 	dto, err := router.meetingUseCase.Finish(id, c)
 	if err != nil {
-		c.Status(500)
-		_ = c.Error(err)
+		c.JSON(500, err.Error())
 	} else {
 		c.JSON(201, dto)
 	}

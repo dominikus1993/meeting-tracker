@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"errors"
 	"server/domain/model"
 	"server/domain/repository"
 )
@@ -12,6 +13,8 @@ type MeetingsService interface {
 	GetMeeting(id string, ctx context.Context) (*model.Meeting, error)
 	Finish(id string, ctx context.Context) (*model.Meeting, error)
 }
+
+var AlreadyFinished = errors.New("Meeting already fished")
 
 type myMeetingService struct {
 	repo repository.MeetingsRepository
@@ -33,6 +36,10 @@ func (m myMeetingService) Finish(id string, ctx context.Context) (*model.Meeting
 	model, err := m.repo.GetById(id, ctx)
 	if err != nil {
 		return nil, err
+	}
+
+	if model.Finished {
+		return nil, AlreadyFinished
 	}
 
 	return m.repo.Finish(model, ctx)
