@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/common/env/env.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/service/services.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/service/services.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/usecase/usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/usecase/usecase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/domain/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/repository/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
@@ -29,6 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />

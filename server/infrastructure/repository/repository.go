@@ -16,6 +16,22 @@ type mongoMeetingRepository struct {
 	db    *mongo.Database
 }
 
+func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
+	panic("implement me")
+}
+
+func (r *mongoMeetingRepository) Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error) {
+	panic("implement me")
+}
+
+func (r *mongoMeetingRepository) GetAll(ctx context.Context) ([]*model.Meeting, error) {
+	panic("implement me")
+}
+
+func (r *mongoMeetingRepository) GetById(id string, ctx context.Context) (*model.Meeting, error) {
+	panic("implement me")
+}
+
 func NewMeetingRepository(mongo *mongo.Client) *mongoMeetingRepository {
 	return &mongoMeetingRepository{mongo: mongo, db: mongo.Database("Meetings")}
 }

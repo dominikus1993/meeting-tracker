@@ -5,12 +5,16 @@ import (
 	"server/api/routes"
 	"server/application/service"
 	"server/application/usecase"
+	"server/common/env"
+	"server/infrastructure/mongodb"
+	"server/infrastructure/repository"
 
 	"github.com/gin-gonic/gin"
 )
 
 func setUpRouter() *routes.MeetingRouter {
-	s := service.NewMyMeetingService(nil)
+	r := repository.NewMeetingRepository(mongodb.NewClient(env.GetEnvOrDefault("MEETINGS_DB", "mongodb://root:rootpassword@127.0.0.1:27017")))
+	s := service.NewMyMeetingService(r)
 	useCase := usecase.NewMeetingsUseCase(s)
 	return routes.NewMeetingRouter(useCase)
 }
