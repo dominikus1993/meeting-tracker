@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"log"
 	"server/domain/model"
 	inframodel "server/infrastructure/model"
 
@@ -25,7 +26,28 @@ func (r *mongoMeetingRepository) Finish(meeting *model.Meeting, ctx context.Cont
 }
 
 func (r *mongoMeetingRepository) GetAll(ctx context.Context) ([]*model.Meeting, error) {
-	panic("implement me")
+	cur, err := r.db.Collection(MeetingCollectionName).Find(ctx, bson.D{{}})
+
+	if err != nil {
+		return nil, err
+	}
+	var results []*model.Meeting
+	for cur.Next(ctx) {
+		var result inframodel.MongoMeeting
+		e := cur.Decode(&result)
+		if e != nil {
+			log.Println(e)
+		}
+		results = append(results, result.ToDomainMeeting())
+
+	}
+
+	if err := cur.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	cur.Close(ctx)
+	return results, nil
 }
 
 func (r *mongoMeetingRepository) GetById(id string, ctx context.Context) (*model.Meeting, error) {
@@ -43,7 +65,7 @@ func (r *mongoMeetingRepository) FindById(id string, ctx context.Context) (*mode
 	if err != nil {
 		return nil, err
 	}
-	return &model.Meeting{MeetingID: "dsdsaasd"}, nil
+	return mongoModel.ToDomainMeeting(), nil
 }
 
 // func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
