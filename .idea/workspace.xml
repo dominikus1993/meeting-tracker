@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/api/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/routes/routes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/application/dto/dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/dto/dto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/application/service/services.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/service/services.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/application/usecase/usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/usecase/usecase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/domain/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/domain/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/repository/repository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,20 +64,13 @@
       <list>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/ping" />
+          <option name="urlBase" value="http://localhost:8080/meetings/5f315dbc590796a6cfa1de20" />
           <option name="urlPath" value="" />
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/meetings" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:8080/meetings" />
           <option name="urlPath" value="" />
           <option name="textToSend" value="" />
@@ -98,6 +90,20 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;    &quot;leaders&quot;: [&quot;domino&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/ping" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/meetings" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -142,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.test#1">
+  <component name="RunManager" selected="HTTP Request.test#4">
     <configuration name="go build server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="meeting-tracker" />
       <working_directory value="$PROJECT_DIR$/server" />
@@ -158,10 +164,18 @@
     <configuration name="test#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="test#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.test#1" />
+        <item itemvalue="HTTP Request.test#4" />
         <item itemvalue="Go Build.go build server" />
+        <item itemvalue="HTTP Request.test#3" />
+        <item itemvalue="HTTP Request.test#1" />
         <item itemvalue="HTTP Request.All in test" />
       </list>
     </recent_temporary>
@@ -177,7 +191,8 @@
     <MESSAGE value="small change" />
     <MESSAGE value="add repository" />
     <MESSAGE value="add GetAllMeetings" />
-    <option name="LAST_COMMIT_MESSAGE" value="add GetAllMeetings" />
+    <MESSAGE value="add leaders" />
+    <option name="LAST_COMMIT_MESSAGE" value="add leaders" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -187,30 +202,30 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597066661658" />
-    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1597053221453">
+    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1597070398670">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597053221453" />
-    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597054735956">
+    <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597070398670" />
+    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597067425746">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597054735956" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597067380127">
+    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067425746" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597071011170">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597067380127">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597071011170">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597067380127">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597071011170">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597067380127">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597071011170">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1596969279198">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -16,10 +16,24 @@ type MongoMeeting struct {
 
 func (m *MongoMeeting) ToDomainMeeting() *model.Meeting {
 	return &model.Meeting{
-		MeetingID: m.MeetingID.String(),
+		MeetingID: m.MeetingID.Hex(),
 		Leaders:   m.Leaders,
 		Start:     m.Start,
 		Finish:    m.Finish,
 		Finished:  m.Finished,
 	}
+}
+
+func FromDomainMeeting(meeting *model.Meeting) (*MongoMeeting, error) {
+	id, err := primitive.ObjectIDFromHex(meeting.MeetingID)
+	if err != nil {
+		return nil, err
+	}
+	return &MongoMeeting{
+		MeetingID: id,
+		Leaders:   meeting.Leaders,
+		Start:     meeting.Start,
+		Finish:    meeting.Finish,
+		Finished:  meeting.Finished,
+	}, nil
 }

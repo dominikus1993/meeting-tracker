@@ -25,7 +25,7 @@ func (m myMeetingService) GetAll(ctx context.Context) ([]*model.Meeting, error) 
 	return m.repo.GetAll(ctx)
 }
 
-func (m myMeetingService) GetMeeting(id string, ctx context.Context) (*model.Meeting, error) {
+func (m *myMeetingService) GetMeeting(id string, ctx context.Context) (*model.Meeting, error) {
 	return m.repo.GetById(id, ctx)
 }
 

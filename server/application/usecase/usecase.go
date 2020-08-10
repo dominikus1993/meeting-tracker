@@ -3,10 +3,11 @@ package usecase
 import (
 	"context"
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 	"server/application/dto"
 	"server/application/service"
 	"server/domain/model"
+	"server/domain/repository"
+	"time"
 )
 
 type MeetingsUseCase interface {
@@ -18,6 +19,11 @@ type MeetingsUseCase interface {
 
 type meetingsUseCase struct {
 	service service.MeetingsService
+	repo    repository.MeetingsRepository
+}
+
+func NewMeetingsUseCase(service service.MeetingsService, repo repository.MeetingsRepository) *meetingsUseCase {
+	return &meetingsUseCase{service: service, repo: repo}
 }
 
 func (u *meetingsUseCase) GetMeeting(id string, c *gin.Context) (*dto.MeetingDto, error) {
@@ -25,7 +31,11 @@ func (u *meetingsUseCase) GetMeeting(id string, c *gin.Context) (*dto.MeetingDto
 	if err != nil {
 		return nil, err
 	}
-	return &dto.MeetingDto{MeetingID: result.MeetingID, Leader: result.Leaders, Start: result.Start, End: result.Finish, Finished: true}, nil
+	var finish *time.Time
+	if !result.Finish.IsZero() {
+		finish = &result.Finish
+	}
+	return &dto.MeetingDto{MeetingID: result.MeetingID, Leaders: result.Leaders, Start: result.Start, End: finish, Finished: true}, nil
 }
 
 func (u *meetingsUseCase) Finish(id string, c context.Context) (*dto.FinishedMeetingDto, error) {
@@ -53,14 +63,13 @@ func (u *meetingsUseCase) GetAll(context context.Context) ([]*dto.StartedMeeting
 }
 
 func (u *meetingsUseCase) StartNew(leaders []string, context context.Context) (*dto.StartedMeetingDto, error) {
-	id := uuid.New()
-	result, err := u.service.Start(model.NewMeeting(id.String(), leaders), context)
+	id, err := u.repo.GetId()
+	if err != nil {
+		return nil, err
+	}
+	result, err := u.service.Start(model.NewMeeting(id, leaders), context)
 	if err != nil {
 		return nil, err
 	}
 	return &dto.StartedMeetingDto{MeetingID: result.MeetingID, Leaders: result.Leaders, Start: result.Start, Finished: false}, nil
-}
-
-func NewMeetingsUseCase(service service.MeetingsService) *meetingsUseCase {
-	return &meetingsUseCase{service: service}
 }

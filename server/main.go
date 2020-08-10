@@ -15,7 +15,7 @@ import (
 func setUpRouter() *routes.MeetingRouter {
 	r := repository.NewMeetingRepository(mongodb.NewClient(env.GetEnvOrDefault("MEETINGS_DB", "mongodb://root:rootpassword@127.0.0.1:27017")))
 	s := service.NewMyMeetingService(r)
-	useCase := usecase.NewMeetingsUseCase(s)
+	useCase := usecase.NewMeetingsUseCase(s, r)
 	return routes.NewMeetingRouter(useCase)
 }
 

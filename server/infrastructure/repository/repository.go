@@ -18,12 +18,25 @@ type mongoMeetingRepository struct {
 	db    *mongo.Database
 }
 
-func (r *mongoMeetingRepository) GetId() (*string, error) {
-	panic("implement me")
+func (r *mongoMeetingRepository) GetId() (string, error) {
+	return primitive.NewObjectID().Hex(), nil
 }
 
-func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
-	panic("implement me")
+func (r *mongoMeetingRepository) Start(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error) {
+	log.Println(meeting)
+	mongoModel, err := inframodel.FromDomainMeeting(meeting)
+	if err != nil {
+		return nil, err
+	}
+	insertResult, err := r.db.Collection(MeetingCollectionName).InsertOne(ctx, mongoModel)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("Inserted a Single Record ", insertResult.InsertedID)
+
+	return meeting, nil
 }
 
 func (r *mongoMeetingRepository) Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error) {
