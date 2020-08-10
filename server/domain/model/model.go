@@ -6,17 +6,17 @@ import (
 
 type Meeting struct {
 	MeetingID string
-	Leader    string
+	Leaders   []string
 	Start     time.Time
 	Finish    time.Time
 	Finished  bool
 }
 
-func NewMeeting(id, leader string) *Meeting {
+func NewMeeting(id string, leaders []string) *Meeting {
 	now := time.Now()
 	return &Meeting{
 		MeetingID: id,
-		Leader:    leader,
+		Leaders:   leaders,
 		Start:     now,
 		Finish:    time.Time{},
 		Finished:  false,

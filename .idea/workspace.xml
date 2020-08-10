@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/application/dto/dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/dto/dto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/application/usecase/usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/usecase/usecase.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/domain/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/model/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/domain/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/repository/repository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +42,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -52,7 +60,89 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
-  <component name="RunManager">
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/ping" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/meetings" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/meetings" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/meetings" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;    &quot;leaders&quot;: [&quot;domino&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/api/item" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;    &quot;leaders&quot;: [&quot;domino&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/meetings/domino" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/meetings" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/x-www-form-urlencoded" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="leader=domino" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.test#1">
     <configuration name="go build server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="meeting-tracker" />
       <working_directory value="$PROJECT_DIR$/server" />
@@ -62,9 +152,17 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="All in test" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="test#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.test#1" />
         <item itemvalue="Go Build.go build server" />
+        <item itemvalue="HTTP Request.All in test" />
       </list>
     </recent_temporary>
   </component>
@@ -78,36 +176,41 @@
     <MESSAGE value="add all routes" />
     <MESSAGE value="small change" />
     <MESSAGE value="add repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="add repository" />
+    <MESSAGE value="add GetAllMeetings" />
+    <option name="LAST_COMMIT_MESSAGE" value="add GetAllMeetings" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597066661658">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597066661658" />
     <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1597053221453">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597053221453" />
-    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597045450534">
+    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597054735956">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597045450534" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1596998517220">
+    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597054735956" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597067380127">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596998517220" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1596998517219">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597067380127">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596998517219" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1596998517219">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597067380127">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596998517219" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1596998517219">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597067380127">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596998517219" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067380127" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1596969279198">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -120,5 +223,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2588" y="52" width="584" height="936" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597000129020" />
+    <state x="2705" y="279" key="refactoring.ChangeSignatureDialog" timestamp="1597067162932">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2705" y="279" key="refactoring.ChangeSignatureDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067162932" />
   </component>
 </project>

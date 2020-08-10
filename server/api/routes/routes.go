@@ -15,8 +15,14 @@ func NewMeetingRouter(meetingUseCase usecase.MeetingsUseCase) *MeetingRouter {
 }
 
 func (router *MeetingRouter) createNewMeeting(c *gin.Context) {
-	leader := c.Param("leader")
-	dto, err := router.meetingUseCase.StartNew(leader, c)
+	request := struct {
+		Leaders []string `json:"leaders"`
+	}{}
+	err := c.BindJSON(&request)
+	if err != nil {
+		c.Status(400)
+	}
+	dto, err := router.meetingUseCase.StartNew(request.Leaders, c)
 	if err != nil {
 		c.Status(500)
 		_ = c.Error(err)
@@ -60,6 +66,6 @@ func (router *MeetingRouter) getAllMeetings(c *gin.Context) {
 func (router *MeetingRouter) SetUpRoutes(r *gin.Engine) {
 	r.GET("/meetings/:id", router.getById)
 	r.GET("/meetings", router.getAllMeetings)
-	r.POST("/meetings/:leader", router.createNewMeeting)
+	r.POST("/meetings", router.createNewMeeting)
 	r.PUT("/meetings/:id", router.finishMeeting)
 }

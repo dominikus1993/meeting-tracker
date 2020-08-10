@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	"server/domain/model"
 	inframodel "server/infrastructure/model"
@@ -15,6 +16,10 @@ const MeetingCollectionName = "meetings"
 type mongoMeetingRepository struct {
 	mongo *mongo.Client
 	db    *mongo.Database
+}
+
+func (r *mongoMeetingRepository) GetId() (*string, error) {
+	panic("implement me")
 }
 
 func (r *mongoMeetingRepository) Start(states *model.Meeting, ctx context.Context) (*model.Meeting, error) {
@@ -51,7 +56,17 @@ func (r *mongoMeetingRepository) GetAll(ctx context.Context) ([]*model.Meeting, 
 }
 
 func (r *mongoMeetingRepository) GetById(id string, ctx context.Context) (*model.Meeting, error) {
-	panic("implement me")
+	objId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return nil, err
+	}
+	filter := bson.M{"_id": objId}
+	var mongoModel inframodel.MongoMeeting
+	err = r.db.Collection(MeetingCollectionName).FindOne(ctx, filter).Decode(&mongoModel)
+	if err != nil {
+		return nil, err
+	}
+	return mongoModel.ToDomainMeeting(), nil
 }
 
 func NewMeetingRepository(mongo *mongo.Client) *mongoMeetingRepository {
@@ -59,9 +74,13 @@ func NewMeetingRepository(mongo *mongo.Client) *mongoMeetingRepository {
 }
 
 func (r *mongoMeetingRepository) FindById(id string, ctx context.Context) (*model.Meeting, error) {
-	filter := bson.M{"_id": id}
+	objId, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return nil, err
+	}
+	filter := bson.M{"_id": objId}
 	var mongoModel inframodel.MongoMeeting
-	err := r.db.Collection(MeetingCollectionName).FindOne(ctx, filter).Decode(&mongoModel)
+	err = r.db.Collection(MeetingCollectionName).FindOne(ctx, filter).Decode(&mongoModel)
 	if err != nil {
 		return nil, err
 	}

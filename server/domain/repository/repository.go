@@ -19,4 +19,5 @@ type MeetingsRepository interface {
 	Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error)
 	GetAll(ctx context.Context) ([]*model.Meeting, error)
 	GetById(id string, ctx context.Context) (*model.Meeting, error)
+	GetId() (*string, error)
 }

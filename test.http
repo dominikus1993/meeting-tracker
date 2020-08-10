@@ -1,0 +1,19 @@
+POST http://localhost:8080/meetings
+Content-Type: application/json
+
+{
+    "leaders": ["domino"]
+}
+
+###
+POST http://localhost:8080/meetings
+
+
+###
+GET http://localhost:8080/meetings
+
+
+###
+GET http://localhost:8080/ping
+
+
