@@ -35,7 +35,7 @@ func (u *meetingsUseCase) GetMeeting(id string, c *gin.Context) (*dto.MeetingDto
 	if !result.Finish.IsZero() {
 		finish = &result.Finish
 	}
-	return &dto.MeetingDto{MeetingID: result.MeetingID, Leaders: result.Leaders, Start: result.Start, End: finish, Finished: true}, nil
+	return &dto.MeetingDto{MeetingID: result.MeetingID, Leaders: result.Leaders, Start: result.Start, End: finish, Finished: result.Finished}, nil
 }
 
 func (u *meetingsUseCase) Finish(id string, c context.Context) (*dto.FinishedMeetingDto, error) {

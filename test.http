@@ -18,6 +18,10 @@ GET http://localhost:8080/meetings/5f315dbc590796a6cfa1de20
 
 
 ###
+PUT http://localhost:8080/meetings/5f315dbc590796a6cfa1de20
+
+
+###
 GET http://localhost:8080/ping
 
 

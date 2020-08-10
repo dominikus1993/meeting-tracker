@@ -37,3 +37,18 @@ func FromDomainMeeting(meeting *model.Meeting) (*MongoMeeting, error) {
 		Finished:  meeting.Finished,
 	}, nil
 }
+
+func FromDomainMeetingAsFinished(meeting *model.Meeting) (*MongoMeeting, error) {
+	id, err := primitive.ObjectIDFromHex(meeting.MeetingID)
+	if err != nil {
+		return nil, err
+	}
+	now := time.Now()
+	return &MongoMeeting{
+		MeetingID: id,
+		Leaders:   meeting.Leaders,
+		Start:     meeting.Start,
+		Finish:    now,
+		Finished:  true,
+	}, nil
+}

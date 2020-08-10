@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/dto/dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/dto/dto.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/service/services.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/service/services.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/application/usecase/usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/usecase/usecase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/domain/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/domain/repository/repository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/infrastructure/repository/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.test#4">
+  <component name="RunManager" selected="HTTP Request.test#5">
     <configuration name="go build server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="meeting-tracker" />
       <working_directory value="$PROJECT_DIR$/server" />
@@ -156,9 +152,6 @@
       <filePath value="$PROJECT_DIR$/server/main.go" />
       <package value="server" />
       <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="All in test" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http">
       <method v="2" />
     </configuration>
     <configuration name="test#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" runType="Run single request">
@@ -170,13 +163,16 @@
     <configuration name="test#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="test#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/test.http" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.test#5" />
         <item itemvalue="HTTP Request.test#4" />
         <item itemvalue="Go Build.go build server" />
         <item itemvalue="HTTP Request.test#3" />
         <item itemvalue="HTTP Request.test#1" />
-        <item itemvalue="HTTP Request.All in test" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +188,8 @@
     <MESSAGE value="add repository" />
     <MESSAGE value="add GetAllMeetings" />
     <MESSAGE value="add leaders" />
-    <option name="LAST_COMMIT_MESSAGE" value="add leaders" />
+    <MESSAGE value="add infrastructure for start meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="add infrastructure for start meeting" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -206,26 +203,26 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597070398670" />
-    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597067425746">
+    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597071059239">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597067425746" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597071011170">
+    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071059239" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597071277852">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597071011170">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071277852" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597071277852">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597071011170">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071277852" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597071277851">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597071011170">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071277851" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597071277852">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071011170" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071277852" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1596969279198">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

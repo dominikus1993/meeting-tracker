@@ -40,7 +40,24 @@ func (r *mongoMeetingRepository) Start(meeting *model.Meeting, ctx context.Conte
 }
 
 func (r *mongoMeetingRepository) Finish(meeting *model.Meeting, ctx context.Context) (*model.Meeting, error) {
-	panic("implement me")
+	log.Println(meeting)
+	mongoModel, err := inframodel.FromDomainMeetingAsFinished(meeting)
+	if err != nil {
+		return nil, err
+	}
+	filter := bson.M{"_id": mongoModel.MeetingID}
+
+	update := bson.M{"$set": mongoModel}
+
+	updateResult, err := r.db.Collection(MeetingCollectionName).UpdateOne(ctx, filter, update)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("Updated a Single Record ", updateResult.ModifiedCount)
+
+	return mongoModel.ToDomainMeeting(), nil
 }
 
 func (r *mongoMeetingRepository) GetAll(ctx context.Context) ([]*model.Meeting, error) {
