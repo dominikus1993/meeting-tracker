@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+interface MeetingsState {
+  readonly started: boolean
+  readonly meeting?: Meeting?
+}
+
+interface Meeting {
+
+}
+
+function defaultState(): MeetingsState {
+  return { started: false };
+}
+
+function A() {
+  const [state, setState] = useState(defaultState());
+  return (
+
+  )
+}
+
 
 function App() {
   return (
