@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/api/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/routes/routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/service/services.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/service/services.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/application/usecase/usecase.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/application/usecase/usecase.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
@@ -175,10 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.test#5" />
-        <item itemvalue="Go Build.go build server" />
         <item itemvalue="HTTP Request.test#4" />
         <item itemvalue="HTTP Request.test#3" />
         <item itemvalue="HTTP Request.test#1" />
+        <item itemvalue="Go Build.go build server" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +193,8 @@
     <MESSAGE value="add leaders" />
     <MESSAGE value="add infrastructure for start meeting" />
     <MESSAGE value="add finish method" />
-    <option name="LAST_COMMIT_MESSAGE" value="add finish method" />
+    <MESSAGE value="add meeting finish check" />
+    <option name="LAST_COMMIT_MESSAGE" value="add meeting finish check" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -210,34 +208,34 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597070398670" />
-    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597071620356">
+    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597072302743">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071620356" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597072198039">
+    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072302743" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597075766489">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072198039" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597072198039">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597075766489" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1597075766488">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072198039" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597072198038">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597075766488" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1597075766488">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072198038" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597072198039">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597075766488" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1597075766488">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072198039" />
-    <state x="2381" y="165" key="SettingsEditor" timestamp="1596969279198">
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597075766488" />
+    <state x="2381" y="165" key="SettingsEditor" timestamp="1597076699607">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2381" y="165" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596969279198" />
-    <state x="2472" y="249" key="Vcs.Push.Dialog.v2" timestamp="1597071683212">
+    <state x="2381" y="165" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597076699607" />
+    <state x="2472" y="249" key="Vcs.Push.Dialog.v2" timestamp="1597072305341">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="249" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597071683212" />
+    <state x="2472" y="249" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597072305341" />
     <state x="2588" y="52" width="584" height="936" key="find.popup" timestamp="1597000129020">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
