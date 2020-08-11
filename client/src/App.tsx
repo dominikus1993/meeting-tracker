@@ -26,7 +26,7 @@ function StartMeetingForm() {
 function Meeting() {
   const [state, setState] = useState(defaultState());
   return (
-    <h1>Jak tam polskie kurwy {state.started.toString()}</h1>
+    <h1>{state.started.toString()}</h1>
   )
 }
 
