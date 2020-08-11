@@ -10,9 +10,11 @@
     "@types/node": "^12.12.54",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
+    "fomantic-ui-css": "^2.8.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "semantic-ui-react": "^1.1.1",
     "typescript": "^3.9.7"
   },
   "scripts": {
