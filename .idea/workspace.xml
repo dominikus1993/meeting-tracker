@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="add Dockerfile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.sum" afterDir="false" />
+    <list default="true" id="a6fac73f-638b-4b64-a5bf-32423d8004e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +195,8 @@
     <MESSAGE value="add finish method" />
     <MESSAGE value="add meeting finish check" />
     <MESSAGE value="add Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Dockerfile" />
+    <MESSAGE value="update to go 1.15" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to go 1.15" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -211,10 +210,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597070398670" />
-    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597497169278">
+    <state x="2505" y="2" key="CommitChangelistDialog2" timestamp="1597497262871">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597497169278" />
+    <state x="2505" y="2" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597497262871" />
     <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1597075766489">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
